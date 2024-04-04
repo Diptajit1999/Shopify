@@ -26,27 +26,32 @@ const createProduct = async (req, res) => {
   }
 };
 
-
 // Updating a product ---> admin access only
-const updateProduct=async(req,res)=>{
-    const productId=req.params.id;
-    const updates=req.body
+const updateProduct = async (req, res) => {
+  const productId = req.params.id;
+  const updates = req.body;
 
-    
-    try {
-        let product=await ProductModel.findById(productId)
+  try {
+    let product = await ProductModel.findById(productId);
 
-        if(!product){
-            return res.status(400).send({msg:"Product not found"})
-        }
-        const updatedProduct=await ProductModel.findByIdAndUpdate(productId,updates,{new:true})
-        res.status(201).send({ msg: "A new product has been added", updatedProduct });
-    } catch (error) {
-        console.error("Error in updating product:", error);
-    res.status(500).send({ error: "Internal Server Error" });
+    if (!product) {
+      return res.status(400).send({ msg: "Product not found" });
     }
-}
+    const updatedProduct = await ProductModel.findByIdAndUpdate(
+      productId,
+      updates,
+      { new: true }
+    );
+    res
+      .status(201)
+      .send({ msg: "A new product has been added", updatedProduct });
+  } catch (error) {
+    console.error("Error in updating product:", error);
+    res.status(500).send({ error: "Internal Server Error" });
+  }
+};
 module.exports = {
   getAllProducts,
   createProduct,
+  updateProduct
 };
