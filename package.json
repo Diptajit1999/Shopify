@@ -1,0 +1,27 @@
+{
+  "name": "shopify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server/server.js",
+    "dev":"nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diptajit1999/Shopify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diptajit1999/Shopify/issues"
+  },
+  "homepage": "https://github.com/Diptajit1999/Shopify#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.0",
+    "nodemon": "^3.1.0"
+  }
+}
