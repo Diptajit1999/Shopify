@@ -6,7 +6,7 @@ console.log(productRouter)
 // productRouter.route("/products").get(getAllProducts)
 productRouter.get("/products",getAllProducts)
 productRouter.post("/products/add",createProduct)
-productRouter.post("/products/update/:id",updateProduct)
+productRouter.put("/products/update/:id",updateProduct)
 
 
 module.exports={
