@@ -40,7 +40,7 @@ const updateProduct = async (req, res) => {
     const updatedProduct = await ProductModel.findByIdAndUpdate(
       productId,
       updates,
-      { new: true }
+      { new: true,runValidators:true,useFindAndModify:false }
     );
     res
       .status(201)
