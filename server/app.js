@@ -9,6 +9,7 @@ app.use("/api/shop",productRouter)
 
 // middleware for Errors
 app.use(errorMiddleware)
+const something="jdsjkaj"
 module.exports={
     app
 }
